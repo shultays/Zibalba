@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_packets" default="compile.module.packets">
+  <dirname property="module.packets.basedir" file="${ant.file.module_packets}"/>
+  
+  <property name="module.jdk.home.packets" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.packets" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.packets" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.packets" value="${compiler.args}"/>
+  
+  <property name="packets.output.dir" value="${module.packets.basedir}/../server/out/production/packets"/>
+  <property name="packets.testoutput.dir" value="${module.packets.basedir}/../server/out/test/packets"/>
+  
+  <path id="packets.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="packets.module.production.classpath">
+    <path refid="${module.jdk.classpath.packets}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="packets.runtime.production.module.classpath">
+    <pathelement location="${packets.output.dir}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="packets.module.classpath">
+    <path refid="${module.jdk.classpath.packets}"/>
+    <pathelement location="${packets.output.dir}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="packets.runtime.module.classpath">
+    <pathelement location="${packets.testoutput.dir}"/>
+    <pathelement location="${packets.output.dir}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.packets">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.packets">
+    <patternset refid="excluded.from.module.packets"/>
+  </patternset>
+  
+  <path id="packets.module.sourcepath">
+    <dirset dir="${module.packets.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.packets" depends="compile.module.packets.production,compile.module.packets.tests" description="Compile module packets"/>
+  
+  <target name="compile.module.packets.production" depends="register.custom.compilers" description="Compile module packets; production classes">
+    <mkdir dir="${packets.output.dir}"/>
+    <javac2 destdir="${packets.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.packets}/javac">
+      <compilerarg line="${compiler.args.packets}"/>
+      <bootclasspath refid="packets.module.bootclasspath"/>
+      <classpath refid="packets.module.production.classpath"/>
+      <src refid="packets.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.packets"/>
+    </javac2>
+    
+    <copy todir="${packets.output.dir}">
+      <fileset dir="${module.packets.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.packets.tests" depends="register.custom.compilers,compile.module.packets.production" description="compile module packets; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.packets" description="cleanup module">
+    <delete dir="${packets.output.dir}"/>
+    <delete dir="${packets.testoutput.dir}"/>
+  </target>
+</project>

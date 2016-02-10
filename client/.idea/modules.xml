@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../packets/packets.iml" filepath="$PROJECT_DIR$/../packets/packets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/test-android.iml" filepath="$PROJECT_DIR$/android/test-android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/test-core.iml" filepath="$PROJECT_DIR$/core/test-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/desktop/test-desktop.iml" filepath="$PROJECT_DIR$/desktop/test-desktop.iml" />
+    </modules>
+  </component>
+</project>
+

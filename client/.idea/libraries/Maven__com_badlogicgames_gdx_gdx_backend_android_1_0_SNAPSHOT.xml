@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.badlogicgames.gdx:gdx-backend-android:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/badlogicgames/gdx/gdx-backend-android/1.0-SNAPSHOT/gdx-backend-android-1.0-20140216.024847-281.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/badlogicgames/gdx/gdx-backend-android/1.0-SNAPSHOT/gdx-backend-android-1.0-20140216.024847-281-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/badlogicgames/gdx/gdx-backend-android/1.0-SNAPSHOT/gdx-backend-android-1.0-20140216.024847-281-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

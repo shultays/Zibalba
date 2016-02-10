@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/bg" android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:background="@drawable/tabbackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_margin="10dp">
+
+
+            <com.goodchild.zibalba.widgets.ZSepiaImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/usericon" android:layout_centerVertical="true"
+                    android:src="@drawable/facebook"/>
+
+            <com.goodchild.zibalba.widgets.ZTextView
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Hello World!" android:id="@+id/username"
+                    android:layout_centerVertical="true"
+                    android:textColor="#4F3F00"
+                    android:textSize="24sp"
+                    android:padding="10dp"
+                    android:layout_toRightOf="@+id/usericon"/>
+
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/editicon"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/dice"/>
+
+            <ImageView android:layout_width="wrap_content" android:layout_height="50dp" android:id="@+id/facebookLogout"
+                       android:src="@drawable/fb_logout" android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.0">
+            <ListView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tableList"
+                    android:cacheColorHint="#00000000"/>
+        </RelativeLayout>
+        <com.goodchild.zibalba.widgets.ZButton
+                android:textColor="#4F3F00"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Table"
+                android:id="@+id/createTable" android:layout_gravity="center_horizontal"
+                android:background="@drawable/tabbackground" android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

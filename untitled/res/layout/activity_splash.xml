@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg" android:scaleType="centerCrop"/>
+
+    <com.goodchild.zibalba.widgets.FunkyText android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/funkyText"/>
+
+    <com.goodchild.zibalba.widgets.ZButton
+            android:textColor="#4F3F00"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guest Login"
+            android:id="@+id/guestLogin" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:background="@drawable/tabbackground" />
+
+    <com.facebook.widget.LoginButton
+            android:textColor="#4F3F00"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Facebook Login"
+            android:id="@+id/facebookLogin"
+            android:visibility="gone"
+            android:background="@drawable/tabbackground" android:layout_above="@+id/guestLogin"
+            android:layout_centerHorizontal="true"
+            />
+</RelativeLayout>
+

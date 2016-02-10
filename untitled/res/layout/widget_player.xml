@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true">
+
+    <com.goodchild.zibalba.widgets.ZSepiaImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/usericon"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/r0"/>
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Hello World!" android:id="@+id/username"
+            android:layout_centerVertical="true"
+            android:textColor="#4F3F00"
+            android:minWidth="60dp"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:gravity="center_horizontal"
+            android:textSize="16sp"/>
+
+    <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <com.goodchild.zibalba.widgets.ZTextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="0!" android:id="@+id/userscore"
+                    android:layout_centerVertical="true"
+                    android:textColor="#4F3F00"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="4dp"
+                    android:layout_centerInParent="true"
+                    android:textSize="16sp"/>
+    </RelativeLayout>
+</LinearLayout>
+

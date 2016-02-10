@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tabbackground_big"
+        android:padding="20dp"
+        android:layout_margin="10dp">
+
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Board Size"
+                android:textSize="20sp"
+                android:background="@drawable/text_bg"
+                android:gravity="center"/>
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5x5"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/boardsize"
+                android:gravity="center"/>
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Time Limit"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
+                android:background="@drawable/text_bg"
+                android:gravity="center"/>
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="90 seconds"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:id="@+id/timeLimit"
+                android:gravity="center"/>
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Max Players"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
+                android:background="@drawable/text_bg"
+                android:gravity="center"/>
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5x5"
+                android:textSize="16sp"
+                android:padding="5dp"
+                android:id="@+id/maxPlayers"
+                android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_alignParentRight="true" android:layout_height="wrap_content" android:orientation="vertical">
+
+        <com.goodchild.zibalba.widgets.ZTextView
+                android:textColor="#674421"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="Players"
+                android:textSize="20sp"
+                android:background="@drawable/text_bg"
+                android:gravity="center"/>
+
+        <LinearLayout
+                android:id="@+id/players"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

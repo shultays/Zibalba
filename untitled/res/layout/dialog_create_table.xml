@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/tabbackground_big"
+        android:padding="20dp"
+        android:layout_margin="10dp">
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:layout_centerInParent="true"
+            android:textColor="#674421"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Board Size"
+            android:textSize="20sp"
+            android:background="@drawable/text_bg"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+
+    <SeekBar
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="240dp"
+            android:max="7"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/slider_progress"
+            android:thumb="@drawable/slider_control"
+            android:id="@+id/boardsizeBar"/>
+
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:textColor="#674421"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5x5"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:id="@+id/boardsize"
+            android:gravity="center"/>
+
+    <View android:layout_width="match_parent" android:layout_height="20dp"/>
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:layout_centerInParent="true"
+            android:textColor="#674421"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Time Limit"
+            android:textSize="20sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/text_bg"
+            android:gravity="center"/>
+
+
+    <SeekBar
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/slider_progress"
+            android:thumb="@drawable/slider_control"
+            android:max="8"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/timeLimitBar"/>
+
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:textColor="#674421"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5x5"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:id="@+id/timeLimit"
+            android:gravity="center"/>
+
+
+    <View android:layout_width="match_parent" android:layout_height="20dp"/>
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:layout_centerInParent="true"
+            android:textColor="#674421"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Max Players"
+            android:textSize="20sp"
+            android:background="@drawable/text_bg"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"/>
+
+
+    <SeekBar
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_centerInParent="true"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:progressDrawable="@drawable/slider_progress"
+            android:thumb="@drawable/slider_control"
+            android:max="10"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/playerCountBar"/>
+
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:textColor="#674421"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5x5"
+            android:textSize="16sp"
+            android:padding="5dp"
+            android:id="@+id/playerCount"
+            android:gravity="center"/>
+
+    <com.goodchild.zibalba.widgets.ZTextView
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tabbackground"
+            android:textColor="#674421"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Create"
+            android:layout_gravity="center_horizontal"
+            android:textSize="24sp"
+            android:padding="16dp"
+            android:id="@+id/create"
+            android:gravity="center"/>
+
+</LinearLayout>
+

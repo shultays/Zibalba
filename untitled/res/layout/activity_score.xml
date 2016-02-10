@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:src="@drawable/bg" android:scaleType="centerCrop" android:id="@+id/imageView"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" android:background="@drawable/tabbackground"
+                android:padding="5dp"
+                android:layout_margin="10dp">
+
+            <com.goodchild.zibalba.widgets.ZTextView android:layout_width="wrap_content" android:layout_height="50dp"
+                                             android:text="Winner" android:textSize="34sp"
+                                             android:gravity="center"
+                                             android:padding="5dp"
+                                             android:textColor="#674421" android:id="@+id/winnerText"
+                                             android:layout_alignParentTop="true"
+                                             android:layout_centerHorizontal="true"/>
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:minWidth="200dp"
+                    android:padding="10dp"
+                    android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/winnerText">
+
+                <com.goodchild.zibalba.widgets.ZSepiaImageView android:layout_width="100dp"
+                    android:layout_height="100dp" android:id="@+id/winnerImage"
+                    android:src="@drawable/facebook" android:layout_centerVertical="true"/>
+
+                <com.goodchild.zibalba.widgets.ZTextView android:layout_width="wrap_content" android:layout_height="50dp"
+                                            android:text="Engin Mercan" android:textSize="34sp"
+                                            android:gravity="left"
+                                            android:padding="5dp"
+                                            android:maxLines="1"
+                                            android:textColor="#674421" android:id="@+id/winnerName"
+                                            android:layout_alignParentTop="true"
+                                            android:layout_toRightOf="@+id/winnerImage"/>
+
+                <com.goodchild.zibalba.widgets.ZTextView android:layout_width="wrap_content" android:layout_height="50dp"
+                                            android:text="1" android:textSize="34sp"
+                                            android:gravity="left"
+                                            android:padding="5dp"
+                                            android:textColor="#674421" android:id="@+id/winnerScore"
+                                            android:layout_alignBottom="@+id/winnerImage"
+                                            android:layout_toRightOf="@+id/winnerImage"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/playerList" android:numColumns="2"
+                android:background="@drawable/tabbackground_big"
+                android:padding="5dp"
+                android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

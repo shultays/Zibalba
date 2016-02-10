@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_zibalba_server" default="compile.module.zibalba_server">
+  <dirname property="module.zibalba_server.basedir" file="${ant.file.module_zibalba_server}"/>
+  
+  <property name="module.jdk.home.zibalba_server" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.zibalba_server" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.zibalba_server" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.zibalba_server" value="${compiler.args}"/>
+  
+  <property name="zibalba_server.output.dir" value="${module.zibalba_server.basedir}/out/production/Zibalba_Server"/>
+  <property name="zibalba_server.testoutput.dir" value="${module.zibalba_server.basedir}/out/test/Zibalba_Server"/>
+  
+  <path id="zibalba_server.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="zibalba_server.module.production.classpath">
+    <path refid="${module.jdk.classpath.zibalba_server}"/>
+    <pathelement location="${packets.output.dir}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="zibalba_server.runtime.production.module.classpath">
+    <pathelement location="${zibalba_server.output.dir}"/>
+    <path refid="packets.runtime.production.module.classpath"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="zibalba_server.module.classpath">
+    <path refid="${module.jdk.classpath.zibalba_server}"/>
+    <pathelement location="${zibalba_server.output.dir}"/>
+    <pathelement location="${packets.testoutput.dir}"/>
+    <pathelement location="${packets.output.dir}"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  <path id="zibalba_server.runtime.module.classpath">
+    <pathelement location="${zibalba_server.testoutput.dir}"/>
+    <pathelement location="${zibalba_server.output.dir}"/>
+    <path refid="packets.runtime.module.classpath"/>
+    <pathelement location="${basedir}/../gson-1.7.1.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.zibalba_server">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.zibalba_server">
+    <patternset refid="excluded.from.module.zibalba_server"/>
+  </patternset>
+  
+  <path id="zibalba_server.module.sourcepath">
+    <dirset dir="${module.zibalba_server.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.zibalba_server" depends="compile.module.zibalba_server.production,compile.module.zibalba_server.tests" description="Compile module Zibalba_Server"/>
+  
+  <target name="compile.module.zibalba_server.production" depends="register.custom.compilers,compile.module.packets" description="Compile module Zibalba_Server; production classes">
+    <mkdir dir="${zibalba_server.output.dir}"/>
+    <javac2 destdir="${zibalba_server.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.zibalba_server}/javac">
+      <compilerarg line="${compiler.args.zibalba_server}"/>
+      <bootclasspath refid="zibalba_server.module.bootclasspath"/>
+      <classpath refid="zibalba_server.module.production.classpath"/>
+      <src refid="zibalba_server.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.zibalba_server"/>
+    </javac2>
+    
+    <copy todir="${zibalba_server.output.dir}">
+      <fileset dir="${module.zibalba_server.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.zibalba_server.tests" depends="register.custom.compilers,compile.module.zibalba_server.production" description="compile module Zibalba_Server; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.zibalba_server" description="cleanup module">
+    <delete dir="${zibalba_server.output.dir}"/>
+    <delete dir="${zibalba_server.testoutput.dir}"/>
+  </target>
+</project>
